@@ -1,0 +1,58 @@
+﻿using owinwebapi.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+
+namespace owinwebapi.Controllers
+{
+    public class ContactController : ApiController
+    {
+        Contact[] contacts = new Contact[] 
+        { 
+            new Contact(){ ID=1, Age=23, Birthday=Convert.ToDateTime("1977-05-30"), Name="情缘", Sex="男"},
+            new Contact(){ ID=2, Age=55, Birthday=Convert.ToDateTime("1937-05-30"), Name="令狐冲", Sex="男"},
+            new Contact(){ ID=3, Age=12, Birthday=Convert.ToDateTime("1987-05-30"), Name="郭靖", Sex="男"},
+            new Contact(){ ID=4, Age=18, Birthday=Convert.ToDateTime("1997-05-30"), Name="黄蓉", Sex="女"},
+        };
+
+        /// <summary>
+        /// /api/Contact
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Contact> GetListAll()
+        {
+            return contacts;
+        }
+
+        /// <summary>
+        /// /api/Contact/id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+          [HttpGet]
+        public Contact GetContactByID(int id)
+        {
+            Contact contact = contacts.FirstOrDefault<Contact>(item => item.ID == id);
+            if (contact == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+            return contact;
+        }
+
+        /// <summary>
+        /// 根据性别查询
+        /// /api/Contact?sex=女
+        /// </summary>
+        /// <param name="sex"></param>
+        /// <returns></returns>
+        public HttpResponseMessage GetListBySex(string sex)
+          {
+              return Request.CreateResponse(HttpStatusCode.OK, contacts.Where(item => item.Sex == sex));
+           // return contacts.Where(item => item.Sex == sex).ToList();
+        }
+    }
+}

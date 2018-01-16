@@ -1,0 +1,1276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetPath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FenPingII">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="myTDeviceParam" type="tns:MyTDeviceParam" />
+            <s:element minOccurs="0" maxOccurs="1" name="arrEldRegion" type="tns:ArrayOfELDRegion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MyTDeviceParam">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="devType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="locPort" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="rmtHost" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="rmtPort" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="dstAddr" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="displayType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="r_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="r_name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfELDRegion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ELDRegion" nillable="true" type="tns:ELDRegion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ELDRegion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Region_Index" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ELD_IP" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="road_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegionType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="top" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="left" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="width" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="height" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="border" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FenPingIIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FenPingIIResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGaoJingXinXiToDb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="myTDeviceParam" type="tns:MyTDeviceParam" />
+            <s:element minOccurs="0" maxOccurs="1" name="displayObj" type="tns:DisplayObj" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegionIndex" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DisplayObj">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ObjTypeIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TextPro" type="tns:TextPro" />
+          <s:element minOccurs="0" maxOccurs="1" name="PicturePro" type="tns:PicturePro" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateTimePro" type="tns:DateTimePro" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClockPro" type="tns:ClockPro" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TextPro">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="left" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="top" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="alignment" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="width" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="height" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="transparent" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="border" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="str" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fontname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fontsize" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fontcolor" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fontstyle" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="wordwrap" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="inmethod" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="inspeed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="outmethod" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="outspeed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="stopmethod" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="stopspeed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="stoptime" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PicturePro">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="alignment" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="left" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="top" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="width" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="height" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="transparent" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="border" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="inmethod" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="inspeed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="outmethod" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="outspeed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="stopmethod" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="stopspeed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="stoptime" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DateTimePro">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="alignment" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="left" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="top" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="width" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="height" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="transparent" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="border" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="fontname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fontsize" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fontcolor" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fontstyle" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="year_offset" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="month_offset" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="day_offset" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="sec_offset" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="format" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClockPro">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="left" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="top" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="width" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="height" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="transparent" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="border" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="offset" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bkcolor" type="s:unsignedShort" />
+          <s:element minOccurs="1" maxOccurs="1" name="bordercolor" type="s:unsignedShort" />
+          <s:element minOccurs="1" maxOccurs="1" name="borderwidth" type="s:unsignedShort" />
+          <s:element minOccurs="1" maxOccurs="1" name="bordershape" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="dotradius" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="adotwidth" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="adotcolor" type="s:unsignedShort" />
+          <s:element minOccurs="1" maxOccurs="1" name="bdotwidth" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bdotcolor" type="s:unsignedShort" />
+          <s:element minOccurs="1" maxOccurs="1" name="hourwidth" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="hourcolor" type="s:unsignedShort" />
+          <s:element minOccurs="1" maxOccurs="1" name="minutewidth" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="minutecolor" type="s:unsignedShort" />
+          <s:element minOccurs="1" maxOccurs="1" name="secondwidth" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="secondcolor" type="s:unsignedShort" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddGaoJingXinXiToDbResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddGaoJingXinXiToDbResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendObjToELD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="myTDeviceParam" type="tns:MyTDeviceParam" />
+            <s:element minOccurs="0" maxOccurs="1" name="displayObj" type="tns:DisplayObj" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegionIndex" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendObjToELDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendObjToELDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendArrToELD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="myTDeviceParam" type="tns:MyTDeviceParam" />
+            <s:element minOccurs="0" maxOccurs="1" name="region" type="tns:ELDRegion" />
+            <s:element minOccurs="0" maxOccurs="1" name="arrdisplayObj" type="tns:ArrayOfDisplayObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDisplayObj">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DisplayObj" nillable="true" type="tns:DisplayObj" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendArrToELDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendArrToELDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendToELD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="myTDeviceParam" type="tns:MyTDeviceParam" />
+            <s:element minOccurs="0" maxOccurs="1" name="region" type="tns:ELDRegion" />
+            <s:element minOccurs="0" maxOccurs="1" name="displayObj" type="tns:DisplayObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendToELDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendToELDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdjustTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="myTDeviceParam" type="tns:MyTDeviceParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdjustTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AdjustTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSwitch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="val" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSwitchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetSwitchResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileBytes" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileII">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileBytes" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileIIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadFileIIResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendWords">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="words" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendWordsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendWordsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessage">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTextObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eldIp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTextObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTextObjResult" type="tns:TextObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TextObj">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Text_Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Region_Index" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="left" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="top" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="alignment" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="width" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="height" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="transparent" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="border" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="str" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fontname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fontsize" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fontcolor" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fontstyle" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="wordwrap" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="inmethod" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="inspeed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="outmethod" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="outspeed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="stopmethod" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="stopspeed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="stoptime" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ELD_IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRoadsByDisplayType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="displayType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoadsByDisplayTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoadsByDisplayTypeResult" type="tns:ArrayOfRoad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRoad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="road" nillable="true" type="tns:road" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="road">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="r_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="r_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="picPath" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCreatePicture" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="r_width" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="eld_pictureWidth" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="eld_pictureHeight" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="eld_regionWidth" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="eld_regionHeight" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="eld_rmtHost" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsConnectELD" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="locPort" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="rmtPort" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="displayType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="area" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDownloadPicture" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Search">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eldIp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchResult" type="tns:ArrayOfRegion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRegion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="region" nillable="true" type="tns:region" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="region">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="seq" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Region_Index" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="road_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="left" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="top" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="width" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="height" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="border" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Region_Type" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ELD_IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="TextObj" nillable="true" type="tns:TextObj" />
+      <s:element name="ArrayOfRoad" nillable="true" type="tns:ArrayOfRoad" />
+      <s:element name="ArrayOfRegion" nillable="true" type="tns:ArrayOfRegion" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPathSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPath" />
+  </wsdl:message>
+  <wsdl:message name="GetPathSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="FenPingIISoapIn">
+    <wsdl:part name="parameters" element="tns:FenPingII" />
+  </wsdl:message>
+  <wsdl:message name="FenPingIISoapOut">
+    <wsdl:part name="parameters" element="tns:FenPingIIResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddGaoJingXinXiToDbSoapIn">
+    <wsdl:part name="parameters" element="tns:AddGaoJingXinXiToDb" />
+  </wsdl:message>
+  <wsdl:message name="AddGaoJingXinXiToDbSoapOut">
+    <wsdl:part name="parameters" element="tns:AddGaoJingXinXiToDbResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendObjToELDSoapIn">
+    <wsdl:part name="parameters" element="tns:SendObjToELD" />
+  </wsdl:message>
+  <wsdl:message name="SendObjToELDSoapOut">
+    <wsdl:part name="parameters" element="tns:SendObjToELDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendArrToELDSoapIn">
+    <wsdl:part name="parameters" element="tns:SendArrToELD" />
+  </wsdl:message>
+  <wsdl:message name="SendArrToELDSoapOut">
+    <wsdl:part name="parameters" element="tns:SendArrToELDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendToELDSoapIn">
+    <wsdl:part name="parameters" element="tns:SendToELD" />
+  </wsdl:message>
+  <wsdl:message name="SendToELDSoapOut">
+    <wsdl:part name="parameters" element="tns:SendToELDResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdjustTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:AdjustTime" />
+  </wsdl:message>
+  <wsdl:message name="AdjustTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:AdjustTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSwitchSoapIn">
+    <wsdl:part name="parameters" element="tns:SetSwitch" />
+  </wsdl:message>
+  <wsdl:message name="SetSwitchSoapOut">
+    <wsdl:part name="parameters" element="tns:SetSwitchResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileIISoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFileII" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileIISoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileIIResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendWordsSoapIn">
+    <wsdl:part name="parameters" element="tns:SendWords" />
+  </wsdl:message>
+  <wsdl:message name="SendWordsSoapOut">
+    <wsdl:part name="parameters" element="tns:SendWordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTextObjSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTextObj" />
+  </wsdl:message>
+  <wsdl:message name="GetTextObjSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTextObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoadsByDisplayTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoadsByDisplayType" />
+  </wsdl:message>
+  <wsdl:message name="GetRoadsByDisplayTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoadsByDisplayTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchSoapIn">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="SearchSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPathHttpGetIn">
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPathHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetSwitchHttpGetIn">
+    <wsdl:part name="val" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetSwitchHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileHttpGetIn">
+    <wsdl:part name="fileBytes" type="s1:StringArray" />
+    <wsdl:part name="fileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileIIHttpGetIn">
+    <wsdl:part name="fileBytes" type="s1:StringArray" />
+    <wsdl:part name="fileName" type="s:string" />
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileIIHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendWordsHttpGetIn">
+    <wsdl:part name="words" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendWordsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpGetIn" />
+  <wsdl:message name="GetMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTextObjHttpGetIn">
+    <wsdl:part name="eldIp" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTextObjHttpGetOut">
+    <wsdl:part name="Body" element="tns:TextObj" />
+  </wsdl:message>
+  <wsdl:message name="GetRoadsByDisplayTypeHttpGetIn">
+    <wsdl:part name="displayType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRoadsByDisplayTypeHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfRoad" />
+  </wsdl:message>
+  <wsdl:message name="SearchHttpGetIn">
+    <wsdl:part name="eldIp" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfRegion" />
+  </wsdl:message>
+  <wsdl:message name="GetPathHttpPostIn">
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPathHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetSwitchHttpPostIn">
+    <wsdl:part name="val" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetSwitchHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileHttpPostIn">
+    <wsdl:part name="fileBytes" type="s1:StringArray" />
+    <wsdl:part name="fileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileIIHttpPostIn">
+    <wsdl:part name="fileBytes" type="s1:StringArray" />
+    <wsdl:part name="fileName" type="s:string" />
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileIIHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendWordsHttpPostIn">
+    <wsdl:part name="words" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendWordsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpPostIn" />
+  <wsdl:message name="GetMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTextObjHttpPostIn">
+    <wsdl:part name="eldIp" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTextObjHttpPostOut">
+    <wsdl:part name="Body" element="tns:TextObj" />
+  </wsdl:message>
+  <wsdl:message name="GetRoadsByDisplayTypeHttpPostIn">
+    <wsdl:part name="displayType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRoadsByDisplayTypeHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfRoad" />
+  </wsdl:message>
+  <wsdl:message name="SearchHttpPostIn">
+    <wsdl:part name="eldIp" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfRegion" />
+  </wsdl:message>
+  <wsdl:portType name="ELDWebServiceSoap">
+    <wsdl:operation name="GetPath">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetPath</wsdl:documentation>
+      <wsdl:input message="tns:GetPathSoapIn" />
+      <wsdl:output message="tns:GetPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FenPingII">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">屏幕分区</wsdl:documentation>
+      <wsdl:input message="tns:FenPingIISoapIn" />
+      <wsdl:output message="tns:FenPingIISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGaoJingXinXiToDb">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">添加告警信息到数据库</wsdl:documentation>
+      <wsdl:input message="tns:AddGaoJingXinXiToDbSoapIn" />
+      <wsdl:output message="tns:AddGaoJingXinXiToDbSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendObjToELD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">向指定分区发送信息</wsdl:documentation>
+      <wsdl:input message="tns:SendObjToELDSoapIn" />
+      <wsdl:output message="tns:SendObjToELDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendArrToELD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">发送ELD信息 支持多个对象展示 实现分屏</wsdl:documentation>
+      <wsdl:input message="tns:SendArrToELDSoapIn" />
+      <wsdl:output message="tns:SendArrToELDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendToELD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">发送ELD信息</wsdl:documentation>
+      <wsdl:input message="tns:SendToELDSoapIn" />
+      <wsdl:output message="tns:SendToELDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AdjustTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> 返回 校正显示屏时间完成 表示可以连接设备 </wsdl:documentation>
+      <wsdl:input message="tns:AdjustTimeSoapIn" />
+      <wsdl:output message="tns:AdjustTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSwitch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">打开 或关闭显示屏 （1:打开；0：关闭）</wsdl:documentation>
+      <wsdl:input message="tns:SetSwitchSoapIn" />
+      <wsdl:output message="tns:SetSwitchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传文件到远程服务器.fileBytes：文件流；fileName：文件名</wsdl:documentation>
+      <wsdl:input message="tns:UploadFileSoapIn" />
+      <wsdl:output message="tns:UploadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileII">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传文件到远程服务器.fileBytes：文件流；fileName：文件名</wsdl:documentation>
+      <wsdl:input message="tns:UploadFileIISoapIn" />
+      <wsdl:output message="tns:UploadFileIISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendWords">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">向显示屏发送文字信息</wsdl:documentation>
+      <wsdl:input message="tns:SendWordsSoapIn" />
+      <wsdl:output message="tns:SendWordsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取告警信息{MySql 数据库}</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageSoapIn" />
+      <wsdl:output message="tns:GetMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTextObj">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取告警信息显示格式布局属性</wsdl:documentation>
+      <wsdl:input message="tns:GetTextObjSoapIn" />
+      <wsdl:output message="tns:GetTextObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoadsByDisplayType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据显示类型 获取路口信息{（1：告警；0:文本；2：时钟;3:图片（路况））}</wsdl:documentation>
+      <wsdl:input message="tns:GetRoadsByDisplayTypeSoapIn" />
+      <wsdl:output message="tns:GetRoadsByDisplayTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取显示屏分屏信息（eldIp：显示器IP地址）</wsdl:documentation>
+      <wsdl:input message="tns:SearchSoapIn" />
+      <wsdl:output message="tns:SearchSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ELDWebServiceHttpGet">
+    <wsdl:operation name="GetPath">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetPath</wsdl:documentation>
+      <wsdl:input message="tns:GetPathHttpGetIn" />
+      <wsdl:output message="tns:GetPathHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSwitch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">打开 或关闭显示屏 （1:打开；0：关闭）</wsdl:documentation>
+      <wsdl:input message="tns:SetSwitchHttpGetIn" />
+      <wsdl:output message="tns:SetSwitchHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传文件到远程服务器.fileBytes：文件流；fileName：文件名</wsdl:documentation>
+      <wsdl:input message="tns:UploadFileHttpGetIn" />
+      <wsdl:output message="tns:UploadFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileII">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传文件到远程服务器.fileBytes：文件流；fileName：文件名</wsdl:documentation>
+      <wsdl:input message="tns:UploadFileIIHttpGetIn" />
+      <wsdl:output message="tns:UploadFileIIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendWords">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">向显示屏发送文字信息</wsdl:documentation>
+      <wsdl:input message="tns:SendWordsHttpGetIn" />
+      <wsdl:output message="tns:SendWordsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取告警信息{MySql 数据库}</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageHttpGetIn" />
+      <wsdl:output message="tns:GetMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTextObj">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取告警信息显示格式布局属性</wsdl:documentation>
+      <wsdl:input message="tns:GetTextObjHttpGetIn" />
+      <wsdl:output message="tns:GetTextObjHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoadsByDisplayType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据显示类型 获取路口信息{（1：告警；0:文本；2：时钟;3:图片（路况））}</wsdl:documentation>
+      <wsdl:input message="tns:GetRoadsByDisplayTypeHttpGetIn" />
+      <wsdl:output message="tns:GetRoadsByDisplayTypeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取显示屏分屏信息（eldIp：显示器IP地址）</wsdl:documentation>
+      <wsdl:input message="tns:SearchHttpGetIn" />
+      <wsdl:output message="tns:SearchHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ELDWebServiceHttpPost">
+    <wsdl:operation name="GetPath">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetPath</wsdl:documentation>
+      <wsdl:input message="tns:GetPathHttpPostIn" />
+      <wsdl:output message="tns:GetPathHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSwitch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">打开 或关闭显示屏 （1:打开；0：关闭）</wsdl:documentation>
+      <wsdl:input message="tns:SetSwitchHttpPostIn" />
+      <wsdl:output message="tns:SetSwitchHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传文件到远程服务器.fileBytes：文件流；fileName：文件名</wsdl:documentation>
+      <wsdl:input message="tns:UploadFileHttpPostIn" />
+      <wsdl:output message="tns:UploadFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileII">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传文件到远程服务器.fileBytes：文件流；fileName：文件名</wsdl:documentation>
+      <wsdl:input message="tns:UploadFileIIHttpPostIn" />
+      <wsdl:output message="tns:UploadFileIIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendWords">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">向显示屏发送文字信息</wsdl:documentation>
+      <wsdl:input message="tns:SendWordsHttpPostIn" />
+      <wsdl:output message="tns:SendWordsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取告警信息{MySql 数据库}</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageHttpPostIn" />
+      <wsdl:output message="tns:GetMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTextObj">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取告警信息显示格式布局属性</wsdl:documentation>
+      <wsdl:input message="tns:GetTextObjHttpPostIn" />
+      <wsdl:output message="tns:GetTextObjHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoadsByDisplayType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据显示类型 获取路口信息{（1：告警；0:文本；2：时钟;3:图片（路况））}</wsdl:documentation>
+      <wsdl:input message="tns:GetRoadsByDisplayTypeHttpPostIn" />
+      <wsdl:output message="tns:GetRoadsByDisplayTypeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取显示屏分屏信息（eldIp：显示器IP地址）</wsdl:documentation>
+      <wsdl:input message="tns:SearchHttpPostIn" />
+      <wsdl:output message="tns:SearchHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ELDWebServiceSoap" type="tns:ELDWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPath">
+      <soap:operation soapAction="http://tempuri.org/GetPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FenPingII">
+      <soap:operation soapAction="http://tempuri.org/FenPingII" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGaoJingXinXiToDb">
+      <soap:operation soapAction="http://tempuri.org/AddGaoJingXinXiToDb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendObjToELD">
+      <soap:operation soapAction="http://tempuri.org/SendObjToELD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendArrToELD">
+      <soap:operation soapAction="http://tempuri.org/SendArrToELD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendToELD">
+      <soap:operation soapAction="http://tempuri.org/SendToELD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdjustTime">
+      <soap:operation soapAction="http://tempuri.org/AdjustTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSwitch">
+      <soap:operation soapAction="http://tempuri.org/SetSwitch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://tempuri.org/UploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileII">
+      <soap:operation soapAction="http://tempuri.org/UploadFileII" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWords">
+      <soap:operation soapAction="http://tempuri.org/SendWords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <soap:operation soapAction="http://tempuri.org/GetMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTextObj">
+      <soap:operation soapAction="http://tempuri.org/GetTextObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoadsByDisplayType">
+      <soap:operation soapAction="http://tempuri.org/GetRoadsByDisplayType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://tempuri.org/Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ELDWebServiceSoap12" type="tns:ELDWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPath">
+      <soap12:operation soapAction="http://tempuri.org/GetPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FenPingII">
+      <soap12:operation soapAction="http://tempuri.org/FenPingII" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGaoJingXinXiToDb">
+      <soap12:operation soapAction="http://tempuri.org/AddGaoJingXinXiToDb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendObjToELD">
+      <soap12:operation soapAction="http://tempuri.org/SendObjToELD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendArrToELD">
+      <soap12:operation soapAction="http://tempuri.org/SendArrToELD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendToELD">
+      <soap12:operation soapAction="http://tempuri.org/SendToELD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdjustTime">
+      <soap12:operation soapAction="http://tempuri.org/AdjustTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSwitch">
+      <soap12:operation soapAction="http://tempuri.org/SetSwitch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap12:operation soapAction="http://tempuri.org/UploadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileII">
+      <soap12:operation soapAction="http://tempuri.org/UploadFileII" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWords">
+      <soap12:operation soapAction="http://tempuri.org/SendWords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <soap12:operation soapAction="http://tempuri.org/GetMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTextObj">
+      <soap12:operation soapAction="http://tempuri.org/GetTextObj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoadsByDisplayType">
+      <soap12:operation soapAction="http://tempuri.org/GetRoadsByDisplayType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap12:operation soapAction="http://tempuri.org/Search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ELDWebServiceHttpGet" type="tns:ELDWebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetPath">
+      <http:operation location="/GetPath" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSwitch">
+      <http:operation location="/SetSwitch" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <http:operation location="/UploadFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileII">
+      <http:operation location="/UploadFileII" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWords">
+      <http:operation location="/SendWords" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <http:operation location="/GetMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTextObj">
+      <http:operation location="/GetTextObj" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoadsByDisplayType">
+      <http:operation location="/GetRoadsByDisplayType" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <http:operation location="/Search" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ELDWebServiceHttpPost" type="tns:ELDWebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetPath">
+      <http:operation location="/GetPath" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSwitch">
+      <http:operation location="/SetSwitch" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <http:operation location="/UploadFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileII">
+      <http:operation location="/UploadFileII" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWords">
+      <http:operation location="/SendWords" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <http:operation location="/GetMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTextObj">
+      <http:operation location="/GetTextObj" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoadsByDisplayType">
+      <http:operation location="/GetRoadsByDisplayType" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <http:operation location="/Search" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ELDWebService">
+    <wsdl:port name="ELDWebServiceSoap" binding="tns:ELDWebServiceSoap">
+      <soap:address location="http://192.168.0.11:8094/ELDWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ELDWebServiceSoap12" binding="tns:ELDWebServiceSoap12">
+      <soap12:address location="http://192.168.0.11:8094/ELDWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ELDWebServiceHttpGet" binding="tns:ELDWebServiceHttpGet">
+      <http:address location="http://192.168.0.11:8094/ELDWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ELDWebServiceHttpPost" binding="tns:ELDWebServiceHttpPost">
+      <http:address location="http://192.168.0.11:8094/ELDWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,8 @@
+F:\Work\OwinWebApi\owinwebapi\ClientDemo\bin\Release\ClientDemo.exe.config
+F:\Work\OwinWebApi\owinwebapi\ClientDemo\bin\Release\ClientDemo.exe
+F:\Work\OwinWebApi\owinwebapi\ClientDemo\bin\Release\ClientDemo.pdb
+F:\Work\OwinWebApi\owinwebapi\ClientDemo\obj\Release\ClientDemo.Form1.resources
+F:\Work\OwinWebApi\owinwebapi\ClientDemo\obj\Release\ClientDemo.Properties.Resources.resources
+F:\Work\OwinWebApi\owinwebapi\ClientDemo\obj\Release\ClientDemo.csproj.GenerateResource.Cache
+F:\Work\OwinWebApi\owinwebapi\ClientDemo\obj\Release\ClientDemo.exe
+F:\Work\OwinWebApi\owinwebapi\ClientDemo\obj\Release\ClientDemo.pdb

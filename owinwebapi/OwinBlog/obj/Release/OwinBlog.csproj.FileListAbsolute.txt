@@ -1,0 +1,17 @@
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Release\OwinBlog.exe.config
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Release\OwinBlog.exe
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Release\OwinBlog.pdb
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Release\Microsoft.Owin.dll
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Release\Microsoft.Owin.Host.HttpListener.dll
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Release\Microsoft.Owin.Hosting.dll
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Release\Newtonsoft.Json.dll
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Release\Owin.dll
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Release\System.Net.Http.Formatting.dll
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Release\System.Web.Http.dll
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Release\System.Web.Http.Owin.dll
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Release\Topshelf.dll
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Release\Topshelf.Log4Net.dll
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Release\Topshelf.pdb
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Release\Topshelf.Log4Net.pdb
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\obj\Release\OwinBlog.exe
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\obj\Release\OwinBlog.pdb

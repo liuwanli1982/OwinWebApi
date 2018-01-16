@@ -1,0 +1,10 @@
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Debug\OwinBlog.exe.config
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Debug\OwinBlog.exe
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Debug\OwinBlog.pdb
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Debug\Topshelf.dll
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Debug\Topshelf.Log4Net.dll
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Debug\Topshelf.pdb
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\bin\Debug\Topshelf.Log4Net.pdb
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\obj\Debug\OwinBlog.exe
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\obj\Debug\OwinBlog.pdb
+F:\Work\OwinWebApi\owinwebapi\OwinBlog\obj\Debug\OwinBlog.csprojResolveAssemblyReference.cache
